@@ -33,6 +33,17 @@ function render(blueprintJSON: String) {
     // return blueprint
 }
 
+function renderEntitiesOnCanvas(entities: Entity[]): HTMLCanvasElement | null /* TODO: Change This */ {
+
+    let canvas: HTMLCanvasElement
+    let context: CanvasRenderingContext2D
+
+    canvas = document.createElement("canvas")
+    context = canvas.getContext("2d")!
+
+    return null
+}
+
 function convertBlueprintJSONToBlueprint(blueprint: Blueprint) {
 
     // let blueprint: Blueprint = JSON.parse(blueprintString)
