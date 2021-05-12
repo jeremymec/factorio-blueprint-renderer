@@ -3,25 +3,38 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "tsc"
+    "build": "rollup -c"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^17.0.2",
-    "ts-node": "^9.1.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-image": "^2.0.6",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.4",
     "@types/react-dom": "^17.0.3",
     "@types/styled-components": "^5.1.9",
-    "typescript": "^4.2.4",
-    "webpack": "^5.36.2"
+    "rollup": "^2.47.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-loader": "^9.1.2",
+    "typescript": "^3.9.9"
   },
-  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
   "files": [
-    "dist"
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "dist/.d.ts"
   ]
 }

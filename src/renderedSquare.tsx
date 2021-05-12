@@ -1,12 +1,12 @@
 import React from 'react';
+import image from './assets/transport-belt-down.png'
 
 interface RenderedSquareProps {
   name: string;
 }
  
 function RenderedSquare(props: RenderedSquareProps){
-    const urlString = './assets/' + props.name + '.png'
-    return <img src={urlString}></img>
+    return <img src={image}/>
 
 }
 

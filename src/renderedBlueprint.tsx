@@ -5,8 +5,6 @@ interface MyComponentProps {
   text: string;
 }
  
-function MyComponent(props: MyComponentProps){
-    return <RenderedSquare name="transport-belt-up"></RenderedSquare>
-}
+const MyComponent = ({ text }: MyComponentProps) => <RenderedSquare name={"transport-belt-down"}></RenderedSquare>;
 
-export { MyComponentProps, MyComponent };
+export default MyComponent;

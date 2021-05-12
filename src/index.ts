@@ -1,3 +1,3 @@
-import { MyComponent } from './renderedBlueprint';
+import MyComponent from './renderedBlueprint'
 
-export { MyComponent };
+export { MyComponent }
