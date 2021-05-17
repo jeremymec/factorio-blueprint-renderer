@@ -1,12 +1,13 @@
 import React from 'react';
-import image from './assets/transport-belt-down.png'
+import {getImageFromSquareInformation} from './image'
 
 interface RenderedSquareProps {
-  name: string;
+  type: string
+  direction?: number
 }
  
 function RenderedSquare(props: RenderedSquareProps){
-    return <img src={image}/>
+    return <img src={getImageFromSquareInformation(props.type, props.direction)}/>
 
 }
 
