@@ -15,10 +15,10 @@ export function getImageFromSquareInformation(type: string, direction?: number):
                     return transportBeltDown
                 }
                 case 2: {
-                    return transportBeltUp
+                    return transportBeltRight
                 }
             }
-            return transportBeltRight
+            return transportBeltUp
         }
 
     }

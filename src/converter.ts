@@ -31,7 +31,14 @@ export interface Blueprint {
 }
 
 
-export function convertBlueprintToEntitiesList(blueprint: Blueprint) {
+export interface FactorioGrid {
+    width: number
+    height: number
+    entities: Entity[]
+}
+
+
+export function convertBlueprintToFactorioGrid(blueprint: Blueprint): FactorioGrid {
 
     const xOffset = blueprint.blueprint.entities.reduce((acc, value) => {
         return Math.abs(value.position.x) < acc.position.x ? value : acc
@@ -42,12 +49,22 @@ export function convertBlueprintToEntitiesList(blueprint: Blueprint) {
     }).position.y
 
     let entities: Entity[] = blueprint.blueprint.entities.map((entity => {
+        console.log(`Created entity of type: ${entity.name}\nposition: ${entity.position.x - xOffset} & ${entity.position.y - yOffset}`)
         return {
             type: entity.name,
             position: [entity.position.x - xOffset, entity.position.y - yOffset],
             direction: entity.direction
         }
     }))
+    
+    let width = Math.max(...entities.map(e => {return e.position[0]})) + 1
+    let height = Math.max(...entities.map(e => {return e.position[1]})) + 1
 
-    return entities
+    console.log(`Grid width is ${width} and height is ${height}`)
+
+    return {
+        width: width,
+        height: height,
+        entities: entities
+    }
 }
