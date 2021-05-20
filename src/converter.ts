@@ -1,7 +1,10 @@
+import {getSizeFromSquareInformation} from './size'
+
 export interface Entity {
     type: string,
-    position: [number, number]
+    position: [number, number],
     direction?: number,
+    size: [number, number]
 }
 
 
@@ -53,18 +56,21 @@ export function convertBlueprintToFactorioGrid(blueprint: Blueprint): FactorioGr
         return {
             type: entity.name,
             position: [entity.position.x - xOffset, entity.position.y - yOffset],
-            direction: entity.direction
+            direction: entity.direction,
+            size: getSizeFromSquareInformation(entity.name, entity.direction)
         }
     }))
     
-    let width = Math.max(...entities.map(e => {return e.position[0]})) + 1
-    let height = Math.max(...entities.map(e => {return e.position[1]})) + 1
+    // TODO - The '2' on the end of these statements only works because the largest size possible is a splitter, 2x1 or 1x2.
+    // It should be calculated automatically.
+    let gridWidth = Math.max(...entities.map(e => {return e.position[0]})) + 2
+    let gridHeight = Math.max(...entities.map(e => {return e.position[1]})) + 2
 
-    console.log(`Grid width is ${width} and height is ${height}`)
+    console.log(`Grid width is ${gridWidth} and height is ${gridHeight}`)
 
     return {
-        width: width,
-        height: height,
+        width: gridWidth,
+        height: gridHeight,
         entities: entities
     }
 }
