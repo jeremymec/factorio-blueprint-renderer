@@ -1,4 +1,4 @@
-import MyComponent from './renderedBlueprint'
+import RenderedBlueprint from './renderedBlueprint'
 // import { Entity, Blueprint, convertBlueprintToEntitiesList } from './converter'
 
-export { MyComponent }
+export { RenderedBlueprint }
