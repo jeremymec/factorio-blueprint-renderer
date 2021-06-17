@@ -6,7 +6,7 @@ export function getSizeFromSquareInformation(type: string, direction: number): [
         case "splitter": {
             switch (direction) {
                 case 2: {
-                    return [2,1]
+                    return [1,2]
                 }
                 case 6: {
                     return [2,1]
@@ -15,7 +15,7 @@ export function getSizeFromSquareInformation(type: string, direction: number): [
                     return [1,2]
                 }
                 default:
-                    return [1,2]
+                    return [2,1]
             }
         }
     }

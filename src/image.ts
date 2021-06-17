@@ -28,7 +28,7 @@ export function getImageFromSquareInformation(type: string, direction?: number):
         case "splitter": {
             switch (direction) {
                 case 2: {
-                    return splitterUp
+                    return splitterRight
                 }
                 case 6: {
                     return splitterDown
@@ -37,7 +37,7 @@ export function getImageFromSquareInformation(type: string, direction?: number):
                     return splitterLeft
                 }
                 default:
-                    return splitterRight
+                    return splitterUp
             }
         }
     }
