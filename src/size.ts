@@ -9,10 +9,10 @@ export function getSizeFromSquareInformation(type: string, direction: number): [
                     return [1,2]
                 }
                 case 6: {
-                    return [2,1]
+                    return [1,2]
                 }
                 case 4: {
-                    return [1,2]
+                    return [2,1]
                 }
                 default:
                     return [2,1]

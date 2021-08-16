@@ -8,7 +8,6 @@ interface RenderedSquareProps {
  
 function RenderedSquare(props: RenderedSquareProps){
     return <img src={getImageFromSquareInformation(props.type, props.direction)}/>
-
 }
 
 export { RenderedSquareProps, RenderedSquare };

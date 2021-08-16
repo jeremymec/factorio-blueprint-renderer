@@ -55,11 +55,13 @@ export function convertBlueprintToFactorioGrid(blueprint: Blueprint): FactorioGr
         console.log(`Created entity of type: ${entity.name}\nposition: ${entity.position.x - xOffset} & ${entity.position.y - yOffset}`)
         return {
             type: entity.name,
-            position: [entity.position.x - xOffset, entity.position.y - yOffset],
+            position: entity.name !== 'splitter' ? [entity.position.x - xOffset, entity.position.y - yOffset] : [entity.position.x - xOffset*2, entity.position.y - yOffset*2],
             direction: entity.direction,
             size: getSizeFromSquareInformation(entity.name, entity.direction)
         }
     }))
+
+    console.log("ENTITIES#####", entities)
     
     // TODO - The '2' on the end of these statements only works because the largest size possible is a splitter, 2x1 or 1x2.
     // It should be calculated automatically.

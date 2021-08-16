@@ -7,6 +7,8 @@ import splitterUp from './assets/splitter-up.png'
 import splitterDown from './assets/splitter-down.png'
 import splitterLeft from './assets/splitter-left.png'
 import splitterRight from './assets/splitter-right.png'
+import ironChest from './assets/iron-chest.png'
+import woodenChest from './assets/wooden-chest.png'
 
 export function getImageFromSquareInformation(type: string, direction?: number): string {
     switch (type) {
@@ -31,14 +33,20 @@ export function getImageFromSquareInformation(type: string, direction?: number):
                     return splitterRight
                 }
                 case 6: {
-                    return splitterDown
+                    return splitterLeft
                 }
                 case 4: {
-                    return splitterLeft
+                    return splitterDown
                 }
                 default:
                     return splitterUp
             }
+        }
+        case "iron-chest": {
+            return ironChest
+        }
+        case "wooden-chest": {
+            return woodenChest
         }
     }
 

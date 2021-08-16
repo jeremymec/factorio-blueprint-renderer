@@ -3,6 +3,7 @@ import GridLayout from 'react-grid-layout';
 import { RenderedSquare } from './renderedSquare'
 import { Blueprint, convertBlueprintToFactorioGrid, FactorioGrid } from './converter'
 import grass from './assets/grass.png'
+import { group } from 'console';
 
 interface RenderedBlueprintProps {
   blueprintData: Blueprint,
@@ -24,7 +25,8 @@ const RenderedBlueprint = ({ blueprintData, isLoading }: RenderedBlueprintProps)
 
   const gridStyle = {
     backgroundImage: `url('${grass}')`,
-    backgroundRepeat: 'repeat'
+    backgroundRepeat: 'repeat',
+    width: '-webkit-fill-available'
   }
 
   return (
@@ -36,7 +38,7 @@ const RenderedBlueprint = ({ blueprintData, isLoading }: RenderedBlueprintProps)
     ?
     <div><h1>Processing</h1></div>
     :
-    <GridLayout className="layout" cols={grid.width} rowHeight={64} width={200} style={gridStyle} autoSize={true} margin={[0, 0]} compactType={null}>
+    <GridLayout className="layout" cols={grid.width} rowHeight={66} width={grid.width * 64} style={gridStyle} autoSize={true} margin={[0, 0]} compactType={null} isDraggable={false} isResizable={false}>
       {grid.entities.map((entity, index) => {
         return <div key={index} data-grid={{x: entity.position[0], y: entity.position[1], w: entity.size[0], h: entity.size[1]}}>
           <RenderedSquare type={entity.type} direction={entity.direction}></RenderedSquare>
