@@ -23,7 +23,9 @@ export default {
   ],
   plugins: [
     peerDepsExternal(),
-    resolve(),
+    resolve({
+      preferBuiltins: false
+    }),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
     image(),
