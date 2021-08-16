@@ -3,7 +3,6 @@ import GridLayout from 'react-grid-layout';
 import { RenderedSquare } from './renderedSquare'
 import { Blueprint, convertBlueprintToFactorioGrid, FactorioGrid } from './converter'
 import grass from './assets/grass.png'
-import { group } from 'console';
 
 interface RenderedBlueprintProps {
   blueprintData: Blueprint,
